@@ -1,0 +1,60 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+.banner{
+    width: 100%;
+    height: 100vh;
+    background-image: url(../assets/images/perspectiva.png);
+    background-size: cover;
+    padding: 2rem 2.5rem;
+}
+.header{
+    display: flex;
+    justify-content: space-between;
+}
+.logo-container{
+    margin-left: 4rem;
+}
+.logo-title{
+    display: inline-block;
+    font-family: 'Cairo', sans-serif;
+    font-size: 2rem;
+    letter-spacing: .3rem;
+}
+.logo-title:hover{
+    color: aliceblue;
+    transition: .6s;
+    cursor: pointer;
+}
+.logo-title--color{
+    color: rgb(210, 101, 17);
+}
+.nav-item{
+    display: inline-block;
+    list-style: none;
+    margin: 0 2rem;
+}
+.nav-link{
+    display: inline-block;
+    text-decoration: none;
+    font-family: 'Cairo', sans-serif;
+    font-size: 2rem;
+    color: aliceblue;
+}
+.nav-link::first-letter{
+    color: rgb(210, 101, 17);
+}
+.nav-link:hover{
+    color: rgb(210, 101, 17);
+    transition: .6s;
+}
+.nav-link::first-letter:hover{
+    color: aliceblue;
+    transition: .6s;
+}
+.main{
+    display: grid;
+    grid-template-columns: 5;
+    grid-template-rows: 2;
+}
