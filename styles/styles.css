@@ -2,21 +2,27 @@
     margin: 0;
     box-sizing: border-box;
 }
-.banner{
+.banner-container{
+    display: grid;
+    grid-template-columns: repeat(5, 20%);
+    grid-template-rows: repeat(8, 1fr);
     width: 100%;
     height: 100vh;
-    background-image: url(../assets/images/perspectiva.png);
+    background-image: url(../assets/images/banner2.jpg);
     background-size: cover;
-    padding: 2rem 2.5rem;
 }
 .header{
+    grid-column: 1/6;
+    grid-row: 1/2;
     display: flex;
     justify-content: space-between;
 }
 .logo-container{
-    margin-left: 4rem;
+    margin-left: 3rem;
+    padding: 2rem 1rem;
 }
 .logo-title{
+    margin: 0;
     display: inline-block;
     font-family: 'Cairo', sans-serif;
     font-size: 2rem;
@@ -30,6 +36,9 @@
 .logo-title--color{
     color: rgb(210, 101, 17);
 }
+.nav-list{
+    padding: 2rem 1rem;
+}
 .nav-item{
     display: inline-block;
     list-style: none;
@@ -37,10 +46,16 @@
 }
 .nav-link{
     display: inline-block;
+    margin: 0;
     text-decoration: none;
     font-family: 'Cairo', sans-serif;
     font-size: 2rem;
+    letter-spacing: .2rem;
     color: aliceblue;
+}
+.nav-link--color{
+    color: rgb(210, 101, 17);
+    letter-spacing: .3rem;
 }
 .nav-link::first-letter{
     color: rgb(210, 101, 17);
@@ -53,8 +68,112 @@
     color: aliceblue;
     transition: .6s;
 }
-.main{
+.content{
+    grid-column: 1/4;
+    grid-row: 2/8;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 3rem 4rem;
+    
+}
+.content-title{
+    display: inline-block;
+    font-family: 'Cairo', sans-serif;
+    font-size: 2.8rem;
+    letter-spacing: .2rem;
+    margin-bottom: .1rem;
+}
+.content-subtitle{
+    font-family: 'Cairo', sans-serif;
+    font-size: 1.2rem;
+    color: rgb(210, 101, 17);
+    letter-spacing: .1rem;
+    margin-bottom: 1rem;
+}
+.content-text{
+    width: 73%;
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.3rem;
+    line-height: 2rem;
+    color: rgb(249, 202, 168);
+}
+.text-style{
+    letter-spacing: .2rem;
+    font-weight: 600;
+    color: rgb(4,4,4);
+}
+.content-text--color{
+    color: rgb(5, 5, 5);
+    text-decoration: underline;
+}
+.text-link{
+    color: rgb(210, 101, 17);
+    font-family: 'Raleway', sans-serif;
+}
+.text-link:hover{
+    text-decoration: underline;
+}
+/* .card{
+    grid-column: 4/6;
+    grid-row: 2/8;
     display: grid;
-    grid-template-columns: 5;
-    grid-template-rows: 2;
+    width: 100%;
+    border: 2px solid yellow;
+    padding: 3rem;
+}
+.card-item{
+    width: 70%;
+    height: 20rem;
+    border: 2px solid yellow;
+} */
+.footer{
+    grid-column: 1/6;
+    grid-row: 8/9;
+    display: flex;
+    justify-content: space-between;
+    padding: 4rem 4rem 0;
+    color: rgb(210, 101, 17);
+}
+.footer-content{
+    display: flex;
+    align-items: baseline;
+}
+.footer-title{
+    font-family: 'Cairo', sans-serif;
+    font-size: 1rem;
+    letter-spacing: .2rem;
+}
+.footer-title-copy{
+    display: inline-block;
+    font-size: 1.4rem;
+    margin-right: .1rem;
+}
+
+@keyframes brillo{
+    0%{
+        filter: brightness(1);
+    }
+    20%{
+        filter: brightness(1.25);
+    }
+    40%{
+        filter: brightness(1.50);
+    }
+    60%{
+        filter: brightness(1.75);
+    }
+    80%{
+        filter: brightness(1.50);
+    }
+    100%{
+        filter: brightness(1);
+    }
+}
+.footer-item{
+    list-style: none;
+    display: inline-block;
+    font-size: 1.5rem;
+    margin: 0 1.2rem;
+    animation-name: brillo;
 }
