@@ -21,6 +21,15 @@
     margin-left: 3rem;
     padding: 2rem 1rem;
 }
+@keyframes mind-animation{
+    from{
+        color:rgb(10, 10, 10);
+
+    }
+    to{
+        color:antiquewhite;
+    }
+}
 .logo-title{
     margin: 0;
     display: inline-block;
@@ -28,9 +37,12 @@
     font-size: 2rem;
     letter-spacing: .3rem;
 }
-.logo-title:hover{
-    color: aliceblue;
-    transition: .6s;
+.logo-title-bw{ 
+    animation-duration: 15s;
+    animation-name: mind-animation;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    transition: 1s;
     cursor: pointer;
 }
 .logo-title--color{
@@ -51,7 +63,7 @@
     font-family: 'Cairo', sans-serif;
     font-size: 2rem;
     letter-spacing: .2rem;
-    color: aliceblue;
+    color: antiquewhite;
 }
 .nav-link--color{
     color: rgb(210, 101, 17);
@@ -65,7 +77,7 @@
     transition: .6s;
 }
 .nav-link::first-letter:hover{
-    color: aliceblue;
+    color: antiquewhite;
     transition: .6s;
 }
 .content{
@@ -96,7 +108,7 @@
     font-family: 'Raleway', sans-serif;
     font-size: 1.2rem;
     line-height: 2rem;
-    color: rgb(249, 202, 168);
+    color: antiquewhite;
 }
 .text-style{
     letter-spacing: .2rem;
@@ -125,26 +137,29 @@
     width: 100%;
     padding: 3rem 1rem;
 }
+@keyframes hover-animation {
+    0%{
+        background-size: cover;
+    }
+    50%{
+        background-size: 30rem;
+    }
+    100%{
+        background-size: 45rem;
+    }
+}
 .card-item1{
     grid-row: 1/2;
     grid-column:1/2;
     background-image: url(../assets/images/tarjeta1-img.jpg);
     background-size: cover;
+    border-radius: .2rem;
     padding: 1rem;
 }
-.card-item2{
-    grid-row: 2/3;
-    grid-column:1/2;
-    background-image: url(../assets/images/tarjeta1-img.jpg);
-    background-size: cover;
-    padding: 1rem;
-}
-.card-item3{
-    grid-row: 1/3;
-    grid-column:2/3;
-    background-image: url(../assets/images/tarjeta1-img.jpg);
-    background-size: cover;
-    padding: 1rem;
+.card-item1:hover{
+    transition: all 3s;
+    animation: hover-animation .7s ease-out;
+    background-size: 45rem;
 }
 .card-text{
     display: flex;
@@ -167,9 +182,43 @@
     font-size: .9rem;
     letter-spacing: .1rem;
 }
-.card2{
-    grid-column: 2/3;
+.card-item2{
+    grid-row: 2/3;
+    grid-column:1/2;
+    background-image: url(../assets/images/img-ocean.jpg);
+    background-size: cover;
+    padding: 1rem;
+}
+.card-item2-text{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: antiquewhite;
+    padding: 3rem 1rem 1rem;
+    width: 40%;
+}
+.card-item2:hover{
+    transition: all 2s;
+    animation: hover-animation .8s ease-in-out;
+    background-size: 45rem;
+}
+.card-item3{
+    position: relative;
     grid-row: 1/3;
+    grid-column:2/3;
+    background-image: url(../assets/images/img-laberinto1.jpg);
+    background-size: cover;
+    border-radius: .2rem;
+    padding: 1rem;
+}
+.card-item3-text{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: antiquewhite;
+    padding: 3rem 1rem 1rem;
+    width: 40%;
+    height: 99%;
 }
 .footer{
     grid-column: 1/6;
@@ -203,30 +252,13 @@
     margin: 0;
     color: rgb(210, 101, 17);
 }
-@keyframes brillo{
-    0%{
-        filter: brightness(1);
-    }
-    20%{
-        filter: brightness(1.25);
-    }
-    40%{
-        filter: brightness(1.50);
-    }
-    60%{
-        filter: brightness(1.75);
-    }
-    80%{
-        filter: brightness(1.50);
-    }
-    100%{
-        filter: brightness(1);
-    }
-}
 .footer-item{
     list-style: none;
     display: inline-block;
     font-size: 1.5rem;
     margin: 0 1.2rem;
-    animation: brillo 10s infinite;
+    animation-duration:15s;
+    animation-name: mind-animation;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
 }
