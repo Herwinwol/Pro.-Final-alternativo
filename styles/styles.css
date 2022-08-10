@@ -96,21 +96,31 @@
     display: inline-block;
     font-family: 'Cairo', sans-serif;
     font-size: 2.8rem;
-    letter-spacing: .2rem;
+    letter-spacing: .3rem;
+    line-height: 60px;
     margin-bottom: .1rem;
+}
+.content-title::selection{
+    content: "";
+    background-color: rgb(210, 101, 17);
+    color: rgb(14,15,16)
 }
 .content-subtitle{
     font-family: 'Cairo', sans-serif;
     font-size: 1.1rem;
-    color: rgb(210, 101, 17);
+    color: antiquewhite;
     letter-spacing: .1rem;
     margin-bottom: 1rem;
+}
+.content-subtitle::selection{
+    background-color: rgb(210, 101, 17);
+    color: rgb(4,4,4);
 }
 .content-text{
     width: 100%;
     font-family: 'Raleway', sans-serif;
     font-size: 1.2rem;
-    line-height: 2rem;
+    line-height: 2.2rem;
     color: antiquewhite;
 }
 .text-style{
@@ -118,16 +128,25 @@
     font-weight: 600;
     color: rgb(4,4,4);
 }
+.text-style::selection{
+    background-color: rgb(210, 101, 17);
+    color: rgb(4,4,4);
+}
 .content-text--color{
     color: rgb(5, 5, 5);
-    text-decoration: underline;
+    font-weight: 600;
 }
 .text-link{
+    margin-top: 5px;
     color: rgb(210, 101, 17);
     font-family: 'Raleway', sans-serif;
 }
 .text-link:hover{
     text-decoration: underline;
+}
+.text-link::selection{
+    background-color: rgb(210, 101, 17);
+    color: rgb(4,4,4);
 }
 .card-container{
     grid-column: 3/6;
@@ -140,18 +159,8 @@
     width: 100%;
     padding: 3rem 1rem;
 }
-@keyframes hover-animation {
-    0%{
-        background-size: cover;
-    }
-    50%{
-        background-size: 30rem;
-    }
-    100%{
-        background-size: 45rem;
-    }
-}
-.card-item1{
+.card1-item{
+    position: relative;
     grid-row: 1/2;
     grid-column:1/2;
     background-image: url(../assets/images/tarjeta1-img.jpg);
@@ -159,35 +168,50 @@
     border-radius: 10px;
     -webkit-box-shadow: 0 0 5px #000;
     box-shadow: 0 0 5px rgb(0, 0, 0);
-    padding: 1rem;
 }
-.card-item1:hover{
-    transition: all 3s;
-    animation: hover-animation .7s ease-out;
-    background-size: 45rem;
+.overlay1{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(14, 15, 16);
+    border-radius: 10px;
+    padding: 2rem;
+    opacity: 0;
+    transition: all 1s;
 }
-.card-text{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    background-color: antiquewhite;
-    padding: 3rem 1rem 1rem;
-    width: 40%;
+.card1-item:hover .overlay1{
+    opacity: .9;
+    transition: all 1.5s;
 }
-.card-text-title{
+.card1-title{
     font-family: 'Cairo', sans-serif;
     font-size: 1.8rem;
-    letter-spacing: .1rem;
-    color: rgb(4,4,4);
+    letter-spacing: .3rem;
+    color: rgb(210, 101, 17);
     text-align: center;
-    margin-bottom: 1.2rem;
+    margin-bottom: 50px;
 }
-.card-text-content{
+.card1-title::selection{
+    content: "";
+    background-color: rgb(210, 101, 17);
+    height: 80%;
+    color: rgb(14,15,16);
+}
+.card1-content{
     font-family: 'Cairo', sans-serif;
-    font-size: .9rem;
-    letter-spacing: .1rem;
+    color: rgb(210, 101, 17);
+    font-size: 1rem;
+    letter-spacing: .2rem;
+    line-height: 22px;
+}
+.card1-content::selection{
+    content: "";
+    background-color: rgb(210, 101, 17);
+    height: 80%;
+    color: rgb(14,15,16);
 }
 .card-item2{
+    position: relative;
     grid-row: 2/3;
     grid-column:1/2;
     background-image: url(../assets/images/img-ocean.jpg);
@@ -195,20 +219,46 @@
     border-radius: 10px;
     -webkit-box-shadow: 0 0 5px #000;
     box-shadow: 0 0 5px rgb(0, 0, 0);
-    padding: 1rem;
 }
-.card-item2-text{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    background-color: antiquewhite;
-    padding: 3rem 1rem 1rem;
-    width: 40%;
+.overlay2{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color:rgb(14, 15, 13);
+    transition: all 1s;
+    opacity:0;
+    padding: 32px;
 }
-.card-item2:hover{
-    transition: all 2s;
-    animation: hover-animation .8s ease-in-out;
-    background-size: 45rem;
+.card2-text-title::selection{
+    content: "";
+    background-color: rgb(210, 101, 17);
+    height: 80%;
+    color: rgb(14,15,16);
+}
+.card-text-content::selection{
+    content: "";
+    background-color: rgb(210, 101, 17);
+    height: 80%;
+    color: rgb(14,15,16);
+}
+.card2-text-title{
+    font-family: 'Cairo', sans-serif;
+    font-size: 1.8rem;
+    letter-spacing: .2rem;
+    color: rgb(210, 101, 17);
+    text-align: center;
+    margin-bottom: 60px;
+}
+.card2-text-content{
+    font-family: 'Cairo', sans-serif;
+    font-size: 1rem;
+    letter-spacing: .2rem;
+    color: rgb(210, 101, 17);
+    line-height: 22px;
+}
+.card-item2:hover .overlay2{
+    transition: all 1.5s;
+    opacity: .9;
 }
 .card-item3{
     position: relative;
@@ -233,28 +283,41 @@
     background-color:rgb(14, 15, 13);
     transition: all 1s;
 
-    font-family: sans-serif;
+    font-family: 'Cairo', sans-serif;
 }
 .card3-text-title{
     opacity: 0;
     font-family: 'Cairo', sans-serif;
     font-size: 1.8rem;
-    letter-spacing: .1rem;
+    letter-spacing: 5px;
     color: rgb(210, 101, 17);
     text-align: center;
     margin : 2rem;
+}
+.card3-text-title::selection{
+    content: "";
+    background-color: rgb(210, 101, 17);
+    height: 80%;
+    color: rgb(14,15,16);
 }
 .card3-text-content{
     opacity: 0;
     margin: 2rem;
     color: rgb(210, 101, 17);
     font-family: 'Cairo', sans-serif;
-    font-size: .9rem;
+    font-size: 1rem;
     letter-spacing: .1rem;
+    line-height: 22px;
+}
+.card3-text-content::selection{
+    content: "";
+    background-color: rgb(210, 101, 17);
+    height: 80%;
+    color: rgb(14,15,16);
 }
 .card-item3:hover .overlay, .card3-text-title, .card3-text-content{
     opacity: .9;
-    transition: 2s all;
+    transition: 1.5s all;
 }
 
 /* .card-item3::before{
@@ -294,10 +357,11 @@
     font-size: 1rem;
     letter-spacing: .2rem;
 }
-.footer-title-copy{
-    display: inline-block;
-    font-size: 1.4rem;
-    margin-right: .1rem;
+.footer-title::selection{
+    content: "";
+    background-color: rgb(210, 101, 17);
+    height: 80%;
+    color: rgb(14,15,16)
 }
 .footer-nav{
     display: flex;
@@ -308,6 +372,18 @@
     display:inline-block;
     margin: 0;
     color: rgb(210, 101, 17);
+}
+.footer-icon::selection{
+    content: "";
+    background-color: rgb(210, 101, 17);
+    height: 80%;
+    color: rgb(14,15,16)
+}
+.footer-list::selection{
+    content: "";
+    background-color: rgb(210, 101, 17);
+    height: 80%;
+    color: rgb(14,15,16)
 }
 .footer-item{
     list-style: none;
