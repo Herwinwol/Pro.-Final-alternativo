@@ -87,7 +87,10 @@
     flex-direction: column;
     align-items: flex-start;
     padding: 3rem 4rem;
-    
+}
+.content-text::selection{
+    background-color: rgb(210, 101, 17);
+    color: rgb(4,4,4);
 }
 .content-title{
     display: inline-block;
@@ -153,7 +156,9 @@
     grid-column:1/2;
     background-image: url(../assets/images/tarjeta1-img.jpg);
     background-size: cover;
-    border-radius: .2rem;
+    border-radius: 10px;
+    -webkit-box-shadow: 0 0 5px #000;
+    box-shadow: 0 0 5px rgb(0, 0, 0);
     padding: 1rem;
 }
 .card-item1:hover{
@@ -187,6 +192,9 @@
     grid-column:1/2;
     background-image: url(../assets/images/img-ocean.jpg);
     background-size: cover;
+    border-radius: 10px;
+    -webkit-box-shadow: 0 0 5px #000;
+    box-shadow: 0 0 5px rgb(0, 0, 0);
     padding: 1rem;
 }
 .card-item2-text{
@@ -208,18 +216,67 @@
     grid-column:2/3;
     background-image: url(../assets/images/img-laberinto1.jpg);
     background-size: cover;
-    border-radius: .2rem;
-    padding: 1rem;
+    -webkit-box-shadow: 0 0 5px #000;
+    box-shadow: 0 0 5px rgb(0, 0, 0);
+    border-radius: 10px;
 }
-.card-item3-text{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    background-color: antiquewhite;
-    padding: 3rem 1rem 1rem;
-    width: 40%;
-    height: 99%;
+.overlay{
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    border-radius: 10px;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 2fr 2fr 1fr;
+
+    background-color:rgb(14, 15, 13);
+    transition: all 1s;
+
+    font-family: sans-serif;
 }
+.card3-text-title{
+    opacity: 0;
+    font-family: 'Cairo', sans-serif;
+    font-size: 1.8rem;
+    letter-spacing: .1rem;
+    color: rgb(210, 101, 17);
+    text-align: center;
+    margin : 2rem;
+}
+.card3-text-content{
+    opacity: 0;
+    margin: 2rem;
+    color: rgb(210, 101, 17);
+    font-family: 'Cairo', sans-serif;
+    font-size: .9rem;
+    letter-spacing: .1rem;
+}
+.card-item3:hover .overlay, .card3-text-title, .card3-text-content{
+    opacity: .9;
+    transition: 2s all;
+}
+
+/* .card-item3::before{
+    content: "";
+    position: absolute;
+    top:0;
+    left:0;
+    background-image: url(../assets/images/img-laberinto1.jpg);
+    border-radius: 10px;
+    opacity: .1;
+    width: 545px;
+    height: 640px;
+    visibility: none;
+} */
+/* .card-item3:hover::before{
+    visibility: visible;
+    width: 545px;
+    height: 640px;
+    opacity: 1;
+    transition: all 3s;
+} */
+
 .footer{
     grid-column: 1/6;
     grid-row: 8/9;
