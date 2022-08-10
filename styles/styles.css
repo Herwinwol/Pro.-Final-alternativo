@@ -80,6 +80,14 @@
     color: antiquewhite;
     transition: .6s;
 }
+@keyframes mind-animation1{
+    from{
+        color:rgb(210, 101, 17);
+    }
+    to{
+        color:rgb(10, 10, 10);
+    }
+}
 .content{
     grid-column: 1/3;
     grid-row: 2/8;
@@ -99,6 +107,15 @@
     letter-spacing: .3rem;
     line-height: 60px;
     margin-bottom: .1rem;
+}
+.content-title::first-letter{
+    content: "";
+    color: rgb(210, 101, 17);
+    animation-duration: 15s;
+    animation-name: mind-animation1;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    transition: 1s;
 }
 .content-title::selection{
     content: "";
@@ -163,7 +180,7 @@
     position: relative;
     grid-row: 1/2;
     grid-column:1/2;
-    background-image: url(../assets/images/tarjeta1-img.jpg);
+    background-image: url(../assets/images/card1-prueba.jpg);
     background-size: cover;
     border-radius: 10px;
     -webkit-box-shadow: 0 0 5px #000;
@@ -211,10 +228,10 @@
     color: rgb(14,15,16);
 }
 .card-item2{
-    position: relative;
+    position: relative; 
     grid-row: 2/3;
     grid-column:1/2;
-    background-image: url(../assets/images/img-ocean.jpg);
+    background-image: url(../assets/images/card2-prueba.jpg);
     background-size: cover;
     border-radius: 10px;
     -webkit-box-shadow: 0 0 5px #000;
@@ -232,13 +249,11 @@
 .card2-text-title::selection{
     content: "";
     background-color: rgb(210, 101, 17);
-    height: 80%;
     color: rgb(14,15,16);
 }
 .card-text-content::selection{
     content: "";
     background-color: rgb(210, 101, 17);
-    height: 80%;
     color: rgb(14,15,16);
 }
 .card2-text-title{
@@ -257,7 +272,7 @@
     line-height: 22px;
 }
 .card-item2:hover .overlay2{
-    transition: all 1.5s;
+    transition: all 1s;
     opacity: .9;
 }
 .card-item3{
@@ -317,7 +332,7 @@
 }
 .card-item3:hover .overlay, .card3-text-title, .card3-text-content{
     opacity: .9;
-    transition: 1.5s all;
+    transition: 1s all;
 }
 
 /* .card-item3::before{
@@ -369,6 +384,10 @@
     column-gap: 2rem;
 }
 .footer-icon{
+    animation-duration:15s;
+    animation-name: mind-animation;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
     display:inline-block;
     margin: 0;
     color: rgb(210, 101, 17);
@@ -390,8 +409,4 @@
     display: inline-block;
     font-size: 1.5rem;
     margin: 0 1.2rem;
-    animation-duration:15s;
-    animation-name: mind-animation;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
 }
